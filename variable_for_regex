@@ -1,0 +1,22 @@
+正则表达写法： 
+re.compile(r’表达式’)
+
+包含变量的正则表达式写法 
+re.compile(r’表达式’+变量+’表达式’) 
+re.compile(r’表达式(%s)表达式’ %变量)
+
+示例代码：
+
+url = "oreilly.com"
+regex3 = re.compile(r"^((/|.)*(%s))" %url)
+regex4 = re.compile(r"^((/|.)*oreilly.com)")
+regex5 = re.compile(r"^((/|.)*"+ url +')')
+
+string3 = '/oreilly.com/baidu.com'
+
+mo3 = regex3.search(string3)
+mo4 = regex4.search(string3)
+mo5 = regex5.search(string3)
+print(mo3.group())
+print(mo4.group())
+print(mo5.group())
