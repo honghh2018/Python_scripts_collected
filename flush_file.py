@@ -33,5 +33,6 @@ for i in sorted(infile_list):
                         sys.stderr.write("mark: "+str(target)+'\n')
                         target1 = round((target/count2)*100.0,2)
                         print("{0}\t{1}".format(match1.group(1),target1))
-                        sys.stdout.flush() #刷新标准刷输出缓冲区
-                        fw.flush() #刷新文件输出缓冲区
+                        sys.stdout.flush() #flushing standard cache area for data output.  
+                        fw.flush() #flushing file cache for data output
+                        #The flushing syntax need to write down
