@@ -14,10 +14,10 @@ with open(sys.argv[1]) as IN:
 		line=line.replace('\n','').rstrip('\n')
 		BaseCounts[temp[0]] +=line.upper()
 
-sys.stdout.write('Gene_ID\t'+'A\t'+'C\t'+'G\t'+'T'+'\n')
+sys.stdout.write('Gene_ID\t'+'A\t'+'C\t'+'G\t'+'T'+'\t'+'N'+'\n')
 for key in sorted(BaseCounts.keys()):
 	ntCounts=[]
-	for nt in ['A','C','G','T']:
+	for nt in ('A','C','G','T','N'):
     		ntCounts.append(BaseCounts[key].count(nt))
-	mystr='\t'.join(map(str, ntCounts))
+	mystr='\t'.join(map(str, ntCount))
 	sys.stdout.write(key+'\t'+mystr+'\n')
