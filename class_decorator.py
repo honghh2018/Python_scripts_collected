@@ -10,7 +10,7 @@ class Washermachine:
 	def __init__(self,voltage=220,rank=1,water=100,scour=5):
 		self.voltage=voltage
 		self.rank=rank
-		self.__water=water
+		self.__water=water #装饰器一般都是用函数来装饰一个私有变量，起名为去掉双下横线的名字，并且装饰器起的名字为私有变量名，property和setter为同一名字
 		self.scour=scour
 		Washermachine.count +=1
 	def add_water(self,water,scour):
