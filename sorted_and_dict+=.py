@@ -4,11 +4,12 @@ import os,sys,re
 #sys.setdefaultencoding('utf-8')
 
 
-stat1={}
+stat1=dict() #defining global variable 
 #global dict(stat1)
 fr=open(sys.argv[1])
 
 def readfile(handle):
+        global stat1 #garnered global variable authority stat1
         for line in handle:
                 line=line.replace('\n','').rstrip()
                 if line.startswith('#'):
